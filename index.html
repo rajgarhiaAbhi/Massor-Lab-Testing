@@ -162,6 +162,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
 <!-- ══ NEW ENTRY ══ -->
 <div class="page active" id="page-entry">
+
+  <!-- MASSOOR TYPE MANAGER -->
+  <div class="card" style="border-color:var(--gold);background:linear-gradient(135deg,rgba(240,165,0,0.05),transparent)">
+    <div class="card-header" style="margin-bottom:10px">
+      <div class="card-label">Massoor Types</div>
+      <button onclick="openAddTypeModal()" style="background:var(--gold);border:none;color:#000;padding:6px 14px;border-radius:7px;cursor:pointer;font-size:12px;font-weight:700;font-family:'DM Sans',sans-serif">+ Add New</button>
+    </div>
+    <div id="type-chips" style="display:flex;flex-wrap:wrap;gap:8px"></div>
+  </div>
   <div class="card">
     <div class="card-header"><div class="card-label">Test Info</div><div class="card-badge">REQUIRED</div></div>
     <div class="form-row three">
@@ -194,13 +203,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div class="machine-grid">
       <div class="machine-card">
         <div class="machine-title">⚙ Tokar 1</div>
-        <div class="machine-field form-group"><div class="form-label">Massoor Type</div><input type="text" class="form-input" id="f-tokar1-type" placeholder="Type..."></div>
+        <div class="machine-field form-group"><div class="form-label">Massoor Type</div><div style="display:flex;gap:6px"><select class="form-input" id="f-tokar1-type" style="flex:1"></select><button onclick="addType('f-tokar1-type')" style="background:var(--gold);border:none;color:#000;border-radius:8px;padding:0 12px;cursor:pointer;font-size:18px;min-height:44px">+</button></div></div>
         <div class="machine-field form-group"><div class="form-label">Input %</div><div class="pct-wrap"><input type="number" class="form-input" id="f-tokar1-in" placeholder="0.00" step="0.01" min="0" max="100"><span class="pct-symbol">%</span></div></div>
         <div class="machine-field form-group"><div class="form-label">Output %</div><div class="pct-wrap"><input type="number" class="form-input" id="f-tokar1-out" placeholder="0.00" step="0.01" min="0" max="100"><span class="pct-symbol">%</span></div></div>
       </div>
       <div class="machine-card">
         <div class="machine-title">⚙ Tokar 2</div>
-        <div class="machine-field form-group"><div class="form-label">Massoor Type</div><input type="text" class="form-input" id="f-tokar2-type" placeholder="Type..."></div>
+        <div class="machine-field form-group"><div class="form-label">Massoor Type</div><div style="display:flex;gap:6px"><select class="form-input" id="f-tokar2-type" style="flex:1"></select><button onclick="addType('f-tokar2-type')" style="background:var(--gold);border:none;color:#000;border-radius:8px;padding:0 12px;cursor:pointer;font-size:18px;min-height:44px">+</button></div></div>
         <div class="machine-field form-group"><div class="form-label">Input %</div><div class="pct-wrap"><input type="number" class="form-input" id="f-tokar2-in" placeholder="0.00" step="0.01" min="0" max="100"><span class="pct-symbol">%</span></div></div>
         <div class="machine-field form-group"><div class="form-label">Output %</div><div class="pct-wrap"><input type="number" class="form-input" id="f-tokar2-out" placeholder="0.00" step="0.01" min="0" max="100"><span class="pct-symbol">%</span></div></div>
       </div>
@@ -212,13 +221,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div class="machine-grid">
       <div class="machine-card">
         <div class="machine-title c">◈ Chaanti 1</div>
-        <div class="machine-field form-group"><div class="form-label">Massoor Type</div><input type="text" class="form-input" id="f-chaanti1-type" placeholder="Type..."></div>
+        <div class="machine-field form-group"><div class="form-label">Massoor Type</div><div style="display:flex;gap:6px"><select class="form-input" id="f-chaanti1-type" style="flex:1"></select><button onclick="addType('f-chaanti1-type')" style="background:var(--gold);border:none;color:#000;border-radius:8px;padding:0 12px;cursor:pointer;font-size:18px;min-height:44px">+</button></div></div>
         <div class="machine-field form-group"><div class="form-label">Input %</div><div class="pct-wrap"><input type="number" class="form-input" id="f-chaanti1-in" placeholder="0.00" step="0.01" min="0" max="100"><span class="pct-symbol">%</span></div></div>
         <div class="machine-field form-group"><div class="form-label">Output %</div><div class="pct-wrap"><input type="number" class="form-input" id="f-chaanti1-out" placeholder="0.00" step="0.01" min="0" max="100"><span class="pct-symbol">%</span></div></div>
       </div>
       <div class="machine-card">
         <div class="machine-title c">◈ Chaanti 2</div>
-        <div class="machine-field form-group"><div class="form-label">Massoor Type</div><input type="text" class="form-input" id="f-chaanti2-type" placeholder="Type..."></div>
+        <div class="machine-field form-group"><div class="form-label">Massoor Type</div><div style="display:flex;gap:6px"><select class="form-input" id="f-chaanti2-type" style="flex:1"></select><button onclick="addType('f-chaanti2-type')" style="background:var(--gold);border:none;color:#000;border-radius:8px;padding:0 12px;cursor:pointer;font-size:18px;min-height:44px">+</button></div></div>
         <div class="machine-field form-group"><div class="form-label">Input %</div><div class="pct-wrap"><input type="number" class="form-input" id="f-chaanti2-in" placeholder="0.00" step="0.01" min="0" max="100"><span class="pct-symbol">%</span></div></div>
         <div class="machine-field form-group"><div class="form-label">Output %</div><div class="pct-wrap"><input type="number" class="form-input" id="f-chaanti2-out" placeholder="0.00" step="0.01" min="0" max="100"><span class="pct-symbol">%</span></div></div>
       </div>
@@ -281,24 +290,50 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 }
 
 function doPost(e) {
-  var sheet = SpreadsheetApp.getActiveSheet();
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
   var data = {};
   try { data = JSON.parse(e.postData.contents); } catch(_) {}
 
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['ID','Date','Time','Size',
-      'Broken Final%','Chaanti Rej1%','Daal Rej1%',
-      'Chaanti Rej2%','Daal Rej2%',
-      'Tokar1 Type','Tokar1 In%','Tokar1 Out%',
-      'Tokar2 Type','Tokar2 In%','Tokar2 Out%',
-      'Chaanti1 Type','Chaanti1 In%','Chaanti1 Out%',
-      'Chaanti2 Type','Chaanti2 In%','Chaanti2 Out%',
-      'Remarks']);
+  var HEADERS = ['Date','Time','Size',
+    'Broken Final','Chaanti Rej1','Daal Rej1',
+    'Chaanti Rej2','Daal Rej2',
+    'Tokar1 Type','Tokar1 In','Tokar1 Out',
+    'Tokar2 Type','Tokar2 In','Tokar2 Out',
+    'Chaanti1 Type','Chaanti1 In','Chaanti1 Out',
+    'Chaanti2 Type','Chaanti2 In','Chaanti2 Out',
+    'Remarks'];
+
+  // Ensure main sheet has headers
+  var main = ss.getSheets()[0];
+  if (main.getLastRow() === 0) main.appendRow(HEADERS);
+
+  // Add new type — create a sheet tab for it
+  if (data.action === 'addType') {
+    var tName = data.typeName;
+    if (!ss.getSheetByName(tName)) {
+      var ns = ss.insertSheet(tName);
+      ns.appendRow(['Date','Time','Machine','Input','Output']);
+    }
+    return out({ status: 'ok' });
   }
 
+  // Rename type — rename existing sheet tab
+  if (data.action === 'renameType') {
+    var oldSheet = ss.getSheetByName(data.oldName);
+    if (oldSheet) {
+      oldSheet.setName(data.newName);
+    } else {
+      // Tab didn't exist yet — create it with new name
+      var ns2 = ss.insertSheet(data.newName);
+      ns2.appendRow(['Date','Time','Machine','Input','Output']);
+    }
+    return out({ status: 'ok' });
+  }
+
+  // Add entry to main sheet
   if (data.action === 'add') {
     var r = data.entry;
-    sheet.appendRow([r.id,r.date,r.time,r.size,
+    main.appendRow([r.date,r.time,r.size,
       r.brokenFinal,r.chaantiRej1,r.daalRej1,
       r.chaantiRej2,r.daalRej2,
       r.tokar1type,r.tokar1in,r.tokar1out,
@@ -306,16 +341,37 @@ function doPost(e) {
       r.chaanti1type,r.chaanti1in,r.chaanti1out,
       r.chaanti2type,r.chaanti2in,r.chaanti2out,
       r.remarks]);
+
+    // Also write to individual type sheets
+    var typeEntries = [
+      [r.tokar1type, 'Tokar 1', r.tokar1in, r.tokar1out],
+      [r.tokar2type, 'Tokar 2', r.tokar2in, r.tokar2out],
+      [r.chaanti1type, 'Chaanti 1', r.chaanti1in, r.chaanti1out],
+      [r.chaanti2type, 'Chaanti 2', r.chaanti2in, r.chaanti2out],
+    ];
+    typeEntries.forEach(function(te) {
+      var typeName = te[0], machine = te[1], inp = te[2], out2 = te[3];
+      if (!typeName) return;
+      var ts = ss.getSheetByName(typeName);
+      if (!ts) {
+        ts = ss.insertSheet(typeName);
+        ts.appendRow(['Date','Time','Machine','Input','Output']);
+      }
+      ts.appendRow([r.date, r.time, machine, inp, out2]);
+    });
   }
 
+  // Delete from main sheet by row match (date+time)
   if (data.action === 'delete') {
-    var rows = sheet.getDataRange().getValues();
+    var rows = main.getDataRange().getValues();
     for (var i = 1; i < rows.length; i++) {
-      if (String(rows[i][0]) === String(data.id)) {
-        sheet.deleteRow(i + 1); break;
+      if (String(rows[i][0]) === String(data.date) &&
+          String(rows[i][1]) === String(data.time)) {
+        main.deleteRow(i + 1); break;
       }
     }
   }
+
   return out({ status: 'ok' });
 }
 
@@ -325,6 +381,47 @@ function out(obj) {
     .setMimeType(ContentService.MimeType.JSON);
 }</div>
     </div>
+  </div>
+</div>
+
+<!-- TYPE ACTION MODAL -->
+<div id="type-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;padding:20px">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;width:100%;max-width:340px">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--gold);letter-spacing:2px;margin-bottom:6px" id="type-modal-title">MASSOOR TYPE</div>
+    <div style="font-size:13px;color:var(--text-dim);margin-bottom:18px">What would you like to do?</div>
+
+    <!-- Rename -->
+    <div style="background:var(--surface2);border-radius:10px;padding:14px;margin-bottom:10px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--blue);margin-bottom:8px">✏️ Rename</div>
+      <input type="text" id="type-rename-input" class="form-input" placeholder="New name..." style="margin-bottom:8px">
+      <button onclick="doRenameType()" style="width:100%;background:var(--blue);border:none;color:#fff;padding:9px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif">Rename + Update Sheet Tab</button>
+    </div>
+
+    <!-- Add New -->
+    <div style="background:var(--surface2);border-radius:10px;padding:14px;margin-bottom:10px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--green);margin-bottom:8px">➕ Add New Type</div>
+      <input type="text" id="type-add-input" class="form-input" placeholder="New type name..." style="margin-bottom:8px">
+      <button onclick="doAddNewType()" style="width:100%;background:var(--green);border:none;color:#fff;padding:9px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif">Add + Create Sheet Tab</button>
+    </div>
+
+    <!-- Delete -->
+    <div style="background:var(--surface2);border-radius:10px;padding:14px;margin-bottom:16px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-bottom:8px">🗑 Delete from List</div>
+      <div style="font-size:11px;color:var(--text-muted);margin-bottom:8px">Removes from dropdown only. Sheet tab and data are kept.</div>
+      <button onclick="doDeleteType()" style="width:100%;background:var(--red-dim);border:1px solid var(--red);color:var(--red);padding:9px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif">Remove from List</button>
+    </div>
+
+    <button onclick="closeTypeModal()" style="width:100%;background:var(--surface3);border:none;color:var(--text-dim);padding:10px;border-radius:8px;cursor:pointer;font-size:13px;font-family:'DM Sans',sans-serif">Cancel</button>
+  </div>
+</div>
+
+<!-- ADD NEW TYPE MODAL (from + Add New button) -->
+<div id="addtype-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;padding:20px">
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;width:100%;max-width:320px">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--gold);letter-spacing:2px;margin-bottom:14px">ADD MASSOOR TYPE</div>
+    <input type="text" id="addtype-input" class="form-input" placeholder="e.g. No 6" style="margin-bottom:12px">
+    <button onclick="confirmAddType()" style="width:100%;background:var(--gold);border:none;color:#000;padding:11px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;margin-bottom:8px">Add + Create Sheet Tab</button>
+    <button onclick="document.getElementById('addtype-modal').style.display='none'" style="width:100%;background:var(--surface3);border:none;color:var(--text-dim);padding:10px;border-radius:8px;cursor:pointer;font-size:13px;font-family:'DM Sans',sans-serif">Cancel</button>
   </div>
 </div>
 
@@ -346,9 +443,135 @@ function out(obj) {
 
 <script>
 // ── CONFIG ──────────────────────────────────────────────────────
-let SHEET_URL = localStorage.getItem('massoor_sheet_url') || '';
-let entries   = JSON.parse(localStorage.getItem('massoor_entries') || '[]');
-let openType  = null;
+let SHEET_URL    = localStorage.getItem('massoor_sheet_url') || '';
+let entries      = JSON.parse(localStorage.getItem('massoor_entries') || '[]');
+let massoorTypes = JSON.parse(localStorage.getItem('massoor_types') || '["No 3","No 4","No 5"]');
+let openType     = null;
+
+// ── MASSOOR TYPE HELPERS ─────────────────────────────────────────
+function saveTypes() {
+  localStorage.setItem('massoor_types', JSON.stringify(massoorTypes));
+}
+
+function renderTypeChips() {
+  const container = document.getElementById('type-chips');
+  if(!container) return;
+  container.innerHTML = '';
+  if(!massoorTypes.length) {
+    container.innerHTML = `<span style="font-size:12px;color:var(--text-muted)">No types yet — tap + Add New</span>`;
+    return;
+  }
+  massoorTypes.forEach(t => {
+    const btn = document.createElement('button');
+    btn.style.cssText = 'background:var(--surface2);border:1px solid var(--border2);color:var(--text);padding:7px 14px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:500;font-family:"DM Sans",sans-serif;display:flex;align-items:center;gap:6px;transition:border-color 0.2s';
+    btn.innerHTML = `${t} <span style="color:var(--text-muted);font-size:11px">✏️</span>`;
+    btn.addEventListener('mouseover', () => btn.style.borderColor='var(--gold)');
+    btn.addEventListener('mouseout',  () => btn.style.borderColor='var(--border2)');
+    btn.addEventListener('click', () => openTypeModal(t));
+    container.appendChild(btn);
+  });
+}
+
+function populateTypeDropdowns() {
+  const selects = ['f-tokar1-type','f-tokar2-type','f-chaanti1-type','f-chaanti2-type'];
+  selects.forEach(id => {
+    const sel = document.getElementById(id);
+    if(!sel) return;
+    const cur = sel.value;
+    sel.innerHTML = '<option value="">-- Select --</option>' +
+      massoorTypes.map(t => `<option value="${t}">${t}</option>`).join('');
+    if(cur && massoorTypes.includes(cur)) sel.value = cur;
+  });
+}
+
+function refreshTypes() {
+  renderTypeChips();
+  populateTypeDropdowns();
+}
+
+// ── EDIT MODAL (tap existing chip) ──────────────────────────────
+function openAddTypeModal() {
+  window._pendingSelectId = null;
+  document.getElementById('addtype-input').value = '';
+  document.getElementById('addtype-modal').style.display = 'flex';
+  setTimeout(() => document.getElementById('addtype-input').focus(), 100);
+}
+let editingType = null;
+
+function openTypeModal(type) {
+  editingType = type;
+  document.getElementById('type-modal-title').textContent = type.toUpperCase();
+  document.getElementById('type-rename-input').value = type;
+  document.getElementById('type-add-input').value = '';
+  document.getElementById('type-modal').style.display = 'flex';
+}
+
+function closeTypeModal() {
+  document.getElementById('type-modal').style.display = 'none';
+  editingType = null;
+}
+
+function doRenameType() {
+  const newName = document.getElementById('type-rename-input').value.trim();
+  if(!newName) { showToast('Enter a new name', true); return; }
+  if(newName === editingType) { closeTypeModal(); return; }
+  if(massoorTypes.includes(newName)) { showToast('That name already exists', true); return; }
+  const idx = massoorTypes.indexOf(editingType);
+  if(idx === -1) return;
+  massoorTypes[idx] = newName;
+  saveTypes();
+  postToSheet({ action:'renameType', oldName:editingType, newName });
+  refreshTypes();
+  closeTypeModal();
+  showToast(`✓ Renamed to "${newName}" — Sheet tab updated`);
+}
+
+function doAddNewType() {
+  const name = document.getElementById('type-add-input').value.trim();
+  if(!name) { showToast('Enter a name', true); return; }
+  if(massoorTypes.includes(name)) { showToast('Already exists', true); return; }
+  massoorTypes.push(name);
+  saveTypes();
+  postToSheet({ action:'addType', typeName:name });
+  refreshTypes();
+  closeTypeModal();
+  showToast(`✓ "${name}" added + Sheet tab created`);
+}
+
+function doDeleteType() {
+  if(!editingType) return;
+  massoorTypes = massoorTypes.filter(t => t !== editingType);
+  saveTypes();
+  // Sheet tab is NOT deleted — data preserved
+  refreshTypes();
+  closeTypeModal();
+  showToast(`"${editingType}" removed from list. Sheet tab kept.`);
+}
+
+// Tap on + button on machine cards opens add modal and auto-selects after
+function addType(selectId) {
+  window._pendingSelectId = selectId;
+  document.getElementById('addtype-input').value = '';
+  document.getElementById('addtype-modal').style.display = 'flex';
+  setTimeout(() => document.getElementById('addtype-input').focus(), 100);
+}
+
+function confirmAddType() {
+  const name = document.getElementById('addtype-input').value.trim();
+  if(!name) { showToast('Enter a name first', true); return; }
+  if(massoorTypes.includes(name)) { showToast('Type already exists', true); return; }
+  massoorTypes.push(name);
+  saveTypes();
+  postToSheet({ action:'addType', typeName:name });
+  refreshTypes();
+  // Auto-select in the dropdown that triggered the add
+  if(window._pendingSelectId) {
+    document.getElementById(window._pendingSelectId).value = name;
+    window._pendingSelectId = null;
+  }
+  document.getElementById('addtype-modal').style.display = 'none';
+  showToast(`✓ "${name}" added!`);
+}
 
 // ── INIT ────────────────────────────────────────────────────────
 (function init() {
@@ -363,6 +586,7 @@ let openType  = null;
   document.getElementById('sheet-url').value = SHEET_URL;
   if(!SHEET_URL) document.getElementById('setup-banner').style.display='flex';
   setSyncStatus(SHEET_URL ? 'ok' : 'err', SHEET_URL ? 'Linked to Google Sheet' : 'Not connected');
+  refreshTypes();
 })();
 
 // ── TABS ────────────────────────────────────────────────────────
@@ -477,7 +701,7 @@ function submitEntry() {
   const btn = document.getElementById('submit-btn');
   btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>SAVING...';
   const payload = { action:'add', entry:{
-    id:entry.id, date:entry.date, time:entry.time, size:entry.size,
+    date:entry.date, time:entry.time, size:entry.size,
     brokenFinal:entry.brokenFinal, chaantiRej1:entry.chaantiRej1, daalRej1:entry.daalRej1,
     chaantiRej2:entry.chaantiRej2, daalRej2:entry.daalRej2,
     tokar1type:entry.tokar1.type, tokar1in:entry.tokar1.input, tokar1out:entry.tokar1.output,
@@ -496,10 +720,11 @@ function resetForm() {
   const now = new Date();
   document.getElementById('f-time').value = now.toTimeString().slice(0,5);
   ['f-size','f-broken-final','f-chaanti-rej1','f-daal-rej1','f-chaanti-rej2','f-daal-rej2',
-   'f-tokar1-type','f-tokar1-in','f-tokar1-out','f-tokar2-type','f-tokar2-in','f-tokar2-out',
-   'f-chaanti1-type','f-chaanti1-in','f-chaanti1-out','f-chaanti2-type','f-chaanti2-in','f-chaanti2-out',
-   'f-remarks'
+   'f-tokar1-in','f-tokar1-out','f-tokar2-in','f-tokar2-out',
+   'f-chaanti1-in','f-chaanti1-out','f-chaanti2-in','f-chaanti2-out','f-remarks'
   ].forEach(id => document.getElementById(id).value='');
+  ['f-tokar1-type','f-tokar2-type','f-chaanti1-type','f-chaanti2-type']
+    .forEach(id => document.getElementById(id).value='');
 }
 
 // ── HISTORY ─────────────────────────────────────────────────────
@@ -547,9 +772,10 @@ function clearFilters() { document.getElementById('hf-date').value=''; document.
 function askDel(id) { document.getElementById('del-'+id).style.display='block'; }
 function cancelDel(id) { document.getElementById('del-'+id).style.display='none'; }
 function confirmDel(id) {
+  const entry = entries.find(e => e.id == id);
   entries = entries.filter(e => e.id != id);
   localStorage.setItem('massoor_entries', JSON.stringify(entries));
-  postToSheet({action:'delete', id}).catch(()=>{});
+  if(entry) postToSheet({action:'delete', date:entry.date, time:entry.time}).catch(()=>{});
   showToast('Entry deleted.');
   renderHistory();
 }
